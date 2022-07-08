@@ -1,0 +1,33 @@
+{% load static %}
+<html lang="en">
+<head>
+    {% include "Portfolio_head.html" %}
+    <meta charset="UTF-8">
+    <title>Shiv Patel</title>
+</head>
+
+<body>
+        {% include "Portfolio/navbar.html" %}
+
+        <div class="pagedetailwrapper">
+            <div class="contentwrapper">
+                <div class="blogdetailcontainer">
+                    <div class="postdetailcontainer">
+                        <div class="post-content-detail">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <h3 style="text-align: center;">Deleting items is permanent. Are you sure you want to proceed?</h3>
+                                <button type="submit" class="btn" onclick="location.href='{% url 'Blog:bloghome' %}'">Delete</button>
+                                <button type="button" class="btn" onclick="location.href='{% url 'Blog:bloghome' %}';">Back</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include "Portfolio/contactform.html" %}
+</body>
+
+{% include "Portfolio/footer.html" %}
+
+</html>

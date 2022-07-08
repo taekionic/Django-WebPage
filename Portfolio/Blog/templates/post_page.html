@@ -1,0 +1,60 @@
+{% load static %}
+<html lang="en">
+<head>
+    {% include "Portfolio_head.html" %}
+    <meta charset="UTF-8">
+    <title>Shiv Patel</title>
+</head>
+
+<body>
+        {% include "Portfolio/navbar.html" %}
+        <div id="pageblur" onclick="togglenav()">
+        </div>
+        <div class="pagedetailwrapper">
+            <div class="contentwrapper">
+                <div class="blogdetailcontainer">
+                    <div class="postdetailcontainer">
+                        <div class="detailsheader">
+                            <h1 class="card-title">{{ view.Title }} </h1>
+                            <p><img class="" src="{{ profile.profile_pic.url }}" style="width: 50px; height: 50px;">{{ view.Author }} | {{ view.Created_on }}</p>
+                            <button type="button" style="float:right;" onclick="location.href='{% url 'Blog:deletepost' view.slug %}'" >Delete</button>
+                        </div>
+                            <p class="blogbodydetail">{{ view.Body | safe }}</p>
+                            <div class="btnctrl">
+                                <button type="button" onclick="location.href='{% url 'Blog:bloghome' %}'" class="detailbtn">Return</button>
+                                <button class="detailbtn" type="button" onclick="location.href='{% url 'Blog:postupdate' view.slug %}';">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="commentsheader">Comments</h2>
+                    <br/>
+                    <div class="commentsection">
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form }}
+                            <button type="submit" onclick="location.href='{% url 'Blog:post_page' view.slug %}';">Submit</button>
+                        </form>
+                        <div class="comments">
+                            {% if not view.comments.all %}
+                                No comments have been added yet :( ...<a href="#">Be the first!</a>
+                            {% else %}
+                                {% for comment in view.comments.all %}
+                                    <strong>
+                                        {{ comment.name }} -
+                                        {{ comment.date_added }}
+                                    </strong>
+                                    <br/>
+                                    {{ comment.body }}
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include "Portfolio/contactform.html" %}
+</body>
+
+{% include "Portfolio/footer.html" %}
+
+</html>

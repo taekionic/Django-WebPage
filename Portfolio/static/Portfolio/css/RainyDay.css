@@ -1,0 +1,253 @@
+html {
+    font-family: Garamond, serif;
+}
+
+:root {
+    --opaquewhite: rgba(255,255,255,.25);
+    --opaquewhitelight: rgba(255,255,255,.5);
+    --opaqueblack: rgba(0,0,0,.25);
+    --opaqueblackbg: rgba(0,0,0,.5);
+    --darkeropaqueblack: rgba(0,0,0,.75);
+    --opaquewhitebg: rgba(255,255,255,.75);
+    --gunmetalgray: rgba(129, 133, 137, .9);
+}
+
+
+body {
+    background: url(../images/RainyDay.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 1
+}
+
+
+.navbar {
+    background-color: var(--opaqueblack);
+    box-shadow: 0px 0px 6px 0px var(--opaquewhite);
+}
+
+.svg path {
+    stroke: rgba(255,255,255,1);
+    stroke-opacity: .7
+}
+
+
+.svg:hover path {
+    stroke: rgba(173, 1, 38, .8);
+    stroke-opacity: 1;
+}
+
+.navbar li {
+    border-radius: 0px;
+    border-top: 1px solid var(--opaquewhitelight);
+    border-bottom: 1px solid var(--opaquewhitelight);
+}
+
+.navbar a {
+    color: white;
+    border-radius: 0px;
+}
+
+.active, .navbar a:hover{
+    background-color: rgba(0,0,0,.5);
+}
+
+.controller {
+    color: white;
+}
+
+.wrapper {
+    background: linear-gradient(
+        hsl(0 0% 0% / 0),
+        hsl(20 0% 0% / .4) 10%,
+        hsl(0 0% 0% / .75));
+    color: white;
+}
+
+.pagecontent {
+    background-color: var(--opaquewhitebg);
+}
+
+.cardrow1, .cardrow2 {
+
+}
+
+.cardrow1 {
+
+}
+
+.cardrow2 {
+
+}
+
+.card1, .card2, .card3 {
+    transition-timing-function: ease-in-out;
+    transition: .75s;
+    box-shadow: 0px 0px 6px 0px var(--opaqueblackbg);
+}
+
+.card1, .card3 {
+    background-image: -webkit-linear-gradient(65deg, #e0dedf 50%, #e58b80 50%);
+    background-size: 300%;
+    background-position: center;
+
+}
+
+.card2 {
+    background-image: -webkit-linear-gradient(65deg, #e58b80 50%, #e0dedf 50%);
+    background-size: 300%;
+    background-position: center;
+}
+
+.card1:hover, .card3:hover {
+    background-position: left 150%;
+}
+
+.card2:hover {
+       background-position: right 150%;
+    transition: .5s ease-in;
+}
+
+
+
+.con2 {
+    box-shadow:  0 0 2000px 500px rgba(255, 255, 255, .25) inset;
+    backdrop-filter: blur(20px);
+    color: white;
+}
+
+.con3 {
+    box-shadow:  0 0 2000px 500px rgba(255, 255, 255, .25) inset;
+    backdrop-filter: blur(20px);
+    color: white;
+}
+
+.formcontainer {
+    background-color: var(--darkeropaqueblack);
+    box-shadow: 0px 0px 6px 1px rgba(255,255,255,.5);
+}
+
+.contactform {
+
+}
+
+.btn {
+    border: none;
+    background-color: var(--opaquewhite);
+    color: white;
+}
+
+.contactform label {
+    color: white;
+}
+
+.formpopup:hover, .btn:hover {
+
+}
+
+.formpopup {
+    background-color: var(--opaquewhite);
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.inputbox {
+   background-color: var(--opaquewhite);
+   color: white;
+}
+
+.dbdisplay {
+    padding: 0px;
+
+}
+
+#dbdisplaycontainer {
+    background-color: var(--opaquewhite) !important;
+    padding: 15px;
+    margin: auto;
+}
+
+.tablestyle {
+    color: white;
+    box-shadow: 0px 0px 5px 1px var(--opaquewhite);
+}
+
+.tableheader {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-top: 1px solid var(--opaquewhite);
+    border-bottom: 1px solid var(--opaquewhite);
+    border-radius: 2px
+}
+
+.tabledata {
+    border-right: 1px solid var(--opaquewhite);
+}
+
+.tabledata2 {
+
+}
+
+.tabledata, .tabledata2 {
+    border-bottom: 1px solid var(--opaquewhite);
+    background-color: rgba(0,0,0,.5)
+}
+
+.pagewrapper {
+    background-color: var(--opaqueblack);
+    color: white;
+}
+
+.contentwrapper, .contentlistwrapper {
+    box-shadow:  0 0 2000px 500px rgba(255, 255, 255, .25) inset;
+    backdrop-filter: blur(20px);
+    z-index: 1;
+}
+
+.blogcontainer {
+}
+
+.postcontainer, .postdetailcontainer {
+    color: white;
+
+}
+
+.cardbody {
+
+}
+
+.post-content {
+
+}
+
+.card-title {
+    margin-top: -2px;
+}
+
+.card-subtitle {
+
+}
+
+.blogbody, .blogbodydetail {
+    box-shadow: 0px 0px 5px 0px black;
+}
+
+
+.blogbtn {
+    border: 1px solid black;
+    background-color: var(--opaqueblackbg);
+    color: white;
+}
+
+.bloginterface {
+    box-shadow: 0px 0px 5px 1px var(--opaqueblackbg);
+}
+
+.blogintro {
+
+}
+
+.footer {
+    background-color: black
+}

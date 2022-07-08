@@ -1,0 +1,56 @@
+{% load static %}
+<html lang="en">
+<head>
+    {% include "Portfolio_head.html" %}
+    <meta charset="UTF-8">
+    <title>Shiv Patel</title>
+</head>
+
+ <main id="swup" class="transition-slide">
+<body id="body" style="height: 99vh; overflow: hidden;">
+
+         <div class="homeoverlay" id="overlay">
+             <div class="overlaycontent">
+                 <div class="overlayinfo">
+                    <div id= "time" class="overlaytime"></div>
+                 </div>
+                 <div class="divspacer"></div>
+                 <div class="spacer">
+                      <div class="newsfeed">
+                          <h3 class="newsheader">News Feed</h3>
+                          {% for title, desc, url, image in articles %}
+                             <div class="article">
+                                 <div class="artcontent">
+                                    <div class="newstitle"><a href="{{url}}">{{ title }}</a></div>
+                                    <div class="newsdscription">{{ desc }}</div>
+                                 </div>
+                                 <div class="artimage">
+                                     <img src="{{ image }}" style='width: 150px; height: 100px; border-radius: 7px;'>
+                                 </div>
+                             </div>
+                          {% endfor %}
+                     </div>
+                     <div class="overlaymenu"></div>
+                         <div class="overlaylinks">
+                         <h4>Quick Links</h4>
+                             <div class="qlrow1">
+                                 <button type="button" class="link" onclick="location.href='{% url 'PortfolioIndex' %}'">Home</button>
+                                 <button type="button" class="link" onclick="location.href='{% url 'Blog:bloghome' %}'">Blog</button>
+                             </div>
+                             <div class="qlrow2">
+                                 <button type="button" class="link">Portfolio</button>
+                                 <button type="button" class="link">Login</button>
+                             </div>
+                         </div>
+                         <div class="overlayweather">
+                             <div class="tempinfo">{{ Temperature }}&#8457</div>
+                            <div class="condition">{{ Condition }}</div>
+                        </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+</body>
+</main>
+</html>

@@ -1,0 +1,57 @@
+{% load static %}
+<html lang="en">
+<head>
+    {% include "Portfolio_head.html" %}
+    <meta charset="UTF-8">
+    <title>Shiv Patel</title>
+</head>
+<main id="swup" class="transition-slide">
+<body>
+
+        {% include "Portfolio/navbar.html" %}
+        <div id="pageblur" onclick="togglenav()">
+        </div>
+        <div class="pagewrapper">
+            <div class="contentlistwrapper">
+                <div class="bloglistcontainer">
+                    {% for p in page.object_list %}
+                    <div class="postcontainer">
+                        <div class="post-content">
+                            <div class="cardheader">
+                                <h2 class="card-title">{{ p.Title }}</h2>
+                                <p class="card-subtitle"> {{p.Author}} | {{p.Created_on}} </p>
+                                <a href="{% url 'Blog:post_page' p.slug %}" class="blogbtn">Read More</a>
+                            </div>
+                            <div class="cardbody">
+                                {{ p.Body|slice:":180" }} ...
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="page-links">
+                        {% for page in page.paginator.page_range %}
+                            <a href="{% url 'Blog:bloghome'%}?page={{ page }}">&nbsp;{{ page }}&nbsp;|&nbsp; </a>
+                        {% endfor %} ...
+                    </div>
+                </div>
+                <div class="bloginterface">
+                    <div class="blogintro">
+                        Welcome to my Blog! I like to share my thoughts on the things I care about and that interest me!
+                    </div>
+                    <button class="createbtn" type="button" onclick="location.href='{% url 'Blog:create' %}'">Create Post</button>
+                    <div class="totalposts">
+                        Total Posts: {{ count }} |
+                        Page Number: {{ page.number }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    {% include "Portfolio/contactform.html" %}
+</body>
+</main>
+{% include "Portfolio/footer.html" %}
+
+</html>

@@ -1,0 +1,31 @@
+{% load static %}
+<html lang="en">
+<head>
+    {% include "Portfolio_head.html" %}
+    <meta charset="UTF-8">
+    <title>Shiv Patel</title>
+</head>
+
+<body>
+        {% include "Portfolio/navbar.html" %}
+
+        <div class="pagedetailwrapper">
+            <div class="contentwrapper">
+                <div class="blogdetailcontainer">
+                    <div class="postdetailcontainer">
+                        <form method="POST" class="createpost">
+                            {% csrf_token %}
+                            {{ form }}
+                            <button class="postbtn" type="submit" onclick="location.href='{% url 'Blog:bloghome' %}'">Post</button>
+                            <button class="postbtn" type="button" onclick="location.href='{% url 'Blog:bloghome' %}'">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include "Portfolio/contactform.html" %}
+</body>
+
+{% include "Portfolio/footer.html" %}
+
+</html>
